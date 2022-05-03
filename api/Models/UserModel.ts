@@ -47,7 +47,7 @@ const UserSchema = new Schema<User>({
     },
     hunter: {
       required: true,
-      type: Boolean
+      type: Boolean,
     },
     lead: {
       required: true,
