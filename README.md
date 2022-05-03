@@ -1,5 +1,9 @@
 # Hellorein Bot List
 
+[![CodeFactor](https://www.codefactor.io/repository/github/helloreindev/bot-list/badge)](https://www.codefactor.io/repository/github/helloreindev/bot-list)
+[![CI](https://github.com/helloreindev/bot-list/actions/workflows/ci.yml/badge.svg)](https://github.com/helloreindev/actions/workflows/ci.yml)
+[![DiscordServer](https://discord.com/api/guilds/796619152428498984/widget.png?style=shield)](https://discord.gg/ANHEmnJbF6)
+
 Just another web listing for Discord bots and everything.
 
 ## Build Setup
