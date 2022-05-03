@@ -67,6 +67,7 @@ export async function getUserMe(req: Request, res: Response) {
       badges: {
         admin: false,
         approval: false,
+        hunter: true,
         lead: false,
         mod: false,
         supporter: false,
