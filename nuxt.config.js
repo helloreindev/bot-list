@@ -39,7 +39,16 @@ export default {
   ],
 
   env: {
+    authToken: process.env.AUTH_TOKEN,
     baseURL: process.env.BASE_URL,
+  },
+
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL
+  },
+
+  privateRuntimeConfig: {
+    authToken: process.env.AUTH_TOKEN
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
