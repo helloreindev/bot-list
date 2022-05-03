@@ -59,6 +59,13 @@
             ></i>
             <span class="unselectable highlight tooltiptext">Verified</span>
           </div>
+          <div v-if="user.badges.hunter" class="tooltip">
+            <i
+              style="font-size: 40px; color: #bfbfbf"
+              class="badge fal fa-bug"
+            ></i>
+            <span class="unselectable highlight tooltiptext">Bug Hunter</span>
+          </div>
           <div v-if="user.badges.supporter" class="tooltip">
             <i
               style="font-size: 40px; color: #ff73dc"
@@ -92,6 +99,12 @@
               v-else-if="user.badges.verified"
               class="highlight"
               style="color: #5cf27d"
+              >{{ user.username }}#{{ user.discriminator }}</b
+            >
+            <b
+              v-else-if="user.badges.hunter"
+              class="highlight"
+              style="color: #bfbfbf"
               >{{ user.username }}#{{ user.discriminator }}</b
             >
             <b
@@ -136,6 +149,13 @@
             v-else-if="user.badges.verified"
             class="highlight"
             style="color: #5cf27d; margin-top: -3%; font-size: 30px"
+          >
+            {{ user.profile.description }}
+          </p>
+          <p
+            v-else-if="user.badges.hunter"
+            class="highlight"
+            style="color: #bfbfbf; margin-top: -3%; font-size: 30px"
           >
             {{ user.profile.description }}
           </p>
@@ -214,6 +234,13 @@
             ></i>
             <span class="unselectable highlight tooltiptext">Verified</span>
           </div>
+          <div v-if="user.badges.hunter" class="tooltip">
+            <i
+              style="font-size: 40px; color: #bfbfbf"
+              class="badge fal fa-bug"
+            ></i>
+            <span class="unselectable highlight tooltiptext">Bug Hunter</span>
+          </div>
           <div v-if="user.badges.supporter" class="tooltip">
             <i
               style="font-size: 40px; color: #ff73dc"
@@ -247,6 +274,12 @@
               v-else-if="user.badges.verified"
               class="highlight"
               style="color: #5cf27d"
+              >{{ user.username }}#{{ user.discriminator }}</b
+            >
+            <b
+              v-else-if="user.badges.hunter"
+              class="highlight"
+              style="color: #bfbfbf"
               >{{ user.username }}#{{ user.discriminator }}</b
             >
             <b
@@ -291,6 +324,13 @@
             v-else-if="user.badges.verified"
             class="highlight"
             style="color: #5cf27d; margin-top: -3%; font-size: 30px"
+          >
+            {{ user.profile.description }}
+          </p>
+          <p
+            v-else-if="user.badges.hunter"
+            class="highlight"
+            style="color: #bfbfbf; margin-top: -3%; font-size: 30px"
           >
             {{ user.profile.description }}
           </p>
