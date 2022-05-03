@@ -81,7 +81,7 @@ export default {
         });
     },
     async updateProfile() {
-      if (this.banner.length !== 0) {
+      if (this.banner && this.banner.length !== 0) {
         if (
           this.user.badges.lead ||
           this.user.badges.admin ||
@@ -99,7 +99,7 @@ export default {
               },
               {
                 headers: {
-                  Authorization: "rein2008041501",
+                  Authorization: process.env.authToken,
                 },
               }
             )
@@ -120,22 +120,22 @@ export default {
             rtl: false,
           });
         }
-      }
-
-      await axios
-        .patch(
-          `http://localhost:3000/api/v1/users/${this.$route.params.action}`,
-          {
-            banner: this.banner,
-            description: this.description,
-          },
-          {
-            headers: {
-              Authorization: "testtoken",
+      } else {
+        await axios
+          .patch(
+            `http://localhost:3000/api/v1/users/${this.$route.params.action}`,
+            {
+              banner: this.banner,
+              description: this.description,
             },
-          }
-        )
-        .catch(() => {});
+            {
+              headers: {
+                Authorization: process.env.authToken,
+              },
+            }
+          )
+          .catch(() => {});
+      }
 
       this.$toast.success("Profile Successfully Edited!", {
         position: POSITION.TOP_RIGHT,
