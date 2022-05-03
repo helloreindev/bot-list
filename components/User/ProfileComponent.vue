@@ -153,6 +153,13 @@
             {{ user.profile.description }}
           </p>
           <p
+            v-else-if="user.badges.hunter"
+            class="highlight"
+            style="color: #bfbfbf; margin-top: -3%; font-size: 30px"
+          >
+            {{ user.profile.description }}
+          </p>
+          <p
             v-else-if="user.badges.supporter"
             class="highlight"
             style="color: #ff73dc; margin-top: -3%; font-size: 30px"
@@ -317,6 +324,13 @@
             v-else-if="user.badges.verified"
             class="highlight"
             style="color: #5cf27d; margin-top: -3%; font-size: 30px"
+          >
+            {{ user.profile.description }}
+          </p>
+          <p
+            v-else-if="user.badges.hunter"
+            class="highlight"
+            style="color: #bfbfbf; margin-top: -3%; font-size: 30px"
           >
             {{ user.profile.description }}
           </p>
