@@ -1,6 +1,10 @@
 <template>
   <div>
     <center>
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
+      />
       <div v-if="loading"></div>
       <div v-else>
         <div
