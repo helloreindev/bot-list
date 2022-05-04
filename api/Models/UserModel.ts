@@ -5,7 +5,10 @@ import { Connection, Model, Schema } from "mongoose";
 export interface UserBadges {
   admin: boolean;
   approval: boolean;
+  approvalLvl2: boolean;
+  contributor: boolean;
   hunter: boolean;
+  hunterLvl2: boolean;
   lead: boolean;
   mod: boolean;
   supporter: boolean;
@@ -45,7 +48,19 @@ const UserSchema = new Schema<User>({
       required: true,
       type: Boolean,
     },
+    approvalLvl2: {
+      required: true,
+      type: Boolean,
+    },
+    contributor: {
+      required: true,
+      type: Boolean,
+    },
     hunter: {
+      required: true,
+      type: Boolean,
+    },
+    hunterLvl2: {
       required: true,
       type: Boolean,
     },
