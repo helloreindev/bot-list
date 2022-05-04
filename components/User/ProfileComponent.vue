@@ -38,7 +38,7 @@
           </div>
           <div v-if="user.badges.mod" class="tooltip">
             <i
-              style="font-size: 40px; color: #f54040"
+              style="font-size: 40px; color: #f52f60"
               class="badge fal fa-shield-alt"
             ></i>
             <span class="unselectable highlight tooltiptext">Moderator</span>
@@ -48,9 +48,7 @@
               style="font-size: 40px; color: #dcff82"
               class="badge fal fa-gavel"
             ></i>
-            <span class="unselectable highlight tooltiptext"
-              >Bots Approval</span
-            >
+            <span class="unselectable highlight tooltiptext">Bot Reviewer</span>
           </div>
           <div v-if="user.badges.verified" class="tooltip">
             <i
@@ -86,7 +84,7 @@
             <b
               v-else-if="user.badges.mod"
               class="highlight"
-              style="color: #f54040"
+              style="color: #f52f60"
               >{{ user.username }}#{{ user.discriminator }}</b
             >
             <b
@@ -134,7 +132,7 @@
           <p
             v-else-if="user.badges.mod"
             class="highlight"
-            style="color: #f54040; margin-top: -3%; font-size: 30px"
+            style="color: #f52f60; margin-top: -3%; font-size: 30px"
           >
             {{ user.profile.description }}
           </p>
@@ -213,7 +211,7 @@
           </div>
           <div v-if="user.badges.mod" class="tooltip">
             <i
-              style="font-size: 40px; color: #f54040"
+              style="font-size: 40px; color: #f52f60"
               class="badge fal fa-shield-alt"
             ></i>
             <span class="unselectable highlight tooltiptext">Moderator</span>
@@ -223,9 +221,7 @@
               style="font-size: 40px; color: #dcff82"
               class="badge fal fa-gavel"
             ></i>
-            <span class="unselectable highlight tooltiptext"
-              >Bots Approval</span
-            >
+            <span class="unselectable highlight tooltiptext">Bot Reviewer</span>
           </div>
           <div v-if="user.badges.verified" class="tooltip">
             <i
@@ -261,7 +257,7 @@
             <b
               v-else-if="user.badges.mod"
               class="highlight"
-              style="color: #f54040"
+              style="color: #f52f60"
               >{{ user.username }}#{{ user.discriminator }}</b
             >
             <b
@@ -309,7 +305,7 @@
           <p
             v-else-if="user.badges.mod"
             class="highlight"
-            style="color: #f54040; margin-top: -3%; font-size: 30px"
+            style="color: #f52f60; margin-top: -3%; font-size: 30px"
           >
             {{ user.profile.description }}
           </p>
