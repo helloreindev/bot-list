@@ -49,7 +49,7 @@
               class="badge fal fa-gavel"
             ></i>
             <span class="unselectable highlight tooltiptext-expand"
-              >Bot Reviewer Adviser</span
+              >Bot Reviewer Team</span
             >
           </div>
           <div v-if="user.badges.approval" class="tooltip">
@@ -79,7 +79,7 @@
               class="badge fal fa-bug"
             ></i>
             <span class="unselectable highlight tooltiptext-expand"
-              >Verified Bug Hunter</span
+              >Bug Hunter Expert</span
             >
           </div>
           <div v-if="user.badges.hunter" class="tooltip">
@@ -286,7 +286,7 @@
               class="badge fal fa-gavel"
             ></i>
             <span class="unselectable highlight tooltiptext-expand"
-              >Bot Reviewer Adviser</span
+              >Bot Reviewer Team</span
             >
           </div>
           <div v-if="user.badges.approval" class="tooltip">
@@ -316,7 +316,7 @@
               class="badge fal fa-bug-slash"
             ></i>
             <span class="unselectable highlight tooltiptext-expand"
-              >Verified Bug Hunter</span
+              >Bug Hunter Expert</span
             >
           </div>
           <div v-if="user.badges.hunter" class="tooltip">
@@ -481,6 +481,7 @@
             >
           </div>
         </div>
+        <h3>{{ user.username }}'s Public Bots [{{ user.bots.length }}]</h3>
         <div class="unselectable" style="margin-top: 4%"></div>
         <button v-if="hasAccess" @click="redirectEdit">
           <span class="text">Edit Profile</span>
