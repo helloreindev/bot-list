@@ -22,7 +22,7 @@
           <div class="unselectable" style="margin-top: 2%"></div>
           <div v-if="user.badges.lead" class="tooltip">
             <i
-              style="font-size: 40px; color: #4da3ff"
+              style="font-size: 40px; color: #1ec9eb"
               class="badge fa-3x fal fa-crown"
             ></i>
             <span class="unselectable highlight tooltiptext">Project Lead</span>
@@ -97,7 +97,7 @@
             <span class="unselectable highlight tooltiptext">Supporter</span>
           </div>
           <h2 style="margin-top: 3%">
-            <b v-if="user.badges.lead" class="highlight" style="color: #4da3ff"
+            <b v-if="user.badges.lead" class="highlight" style="color: #1ec9eb"
               >{{ user.username }}#{{ user.discriminator }}</b
             >
             <b
@@ -161,7 +161,7 @@
           <p
             v-if="user.badges.lead"
             class="highlight"
-            style="color: #4da3ff; margin-top: -3%; font-size: 30px"
+            style="color: #1ec9eb; margin-top: -3%; font-size: 30px"
           >
             {{ user.profile.description }}
           </p>
@@ -259,7 +259,7 @@
           <div class="unselectable" style="margin-top: 2%"></div>
           <div v-if="user.badges.lead" class="tooltip">
             <i
-              style="font-size: 40px; color: #4da3ff"
+              style="font-size: 40px; color: #1ec9eb"
               class="badge fa-3x fal fa-crown"
             ></i>
             <span class="unselectable highlight tooltiptext">Project Lead</span>
@@ -334,7 +334,7 @@
             <span class="unselectable highlight tooltiptext">Supporter</span>
           </div>
           <h2 style="margin-top: 3%">
-            <b v-if="user.badges.lead" class="highlight" style="color: #4da3ff"
+            <b v-if="user.badges.lead" class="highlight" style="color: #1ec9eb"
               >{{ user.username }}#{{ user.discriminator }}</b
             >
             <b
@@ -398,7 +398,7 @@
           <p
             v-if="user.badges.lead"
             class="highlight"
-            style="color: #4da3ff; margin-top: -3%; font-size: 30px"
+            style="color: #1ec9eb; margin-top: -3%; font-size: 30px"
           >
             {{ user.profile.description }}
           </p>
