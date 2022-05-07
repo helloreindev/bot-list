@@ -28,6 +28,8 @@ export default {
       await this.fetchSelfUser();
       await this.fetchLogin();
     });
+
+    setTimeout(() => (this.loading = false), 200);
   },
   methods: {
     fetchLogin() {
