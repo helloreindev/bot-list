@@ -28,7 +28,7 @@
       </button>
     </center>
   </div>
-  <div v-else>
+  <div v-else-if="loggedIn && !hasAccess">
     <h1>Error - 403</h1>
     <h2>Unauthorised</h2>
   </div>
@@ -60,11 +60,13 @@ export default {
     async checkUserOwner() {
       await axios.get("http://localhost:3000/api/v1/users/@me").then((req) => {
         if (req.data.user.id === this.user.id) {
+          this.loggedIn = true;
           this.hasAccess = true;
         } else if (
           req.data.profile.badges.lead ||
           req.data.profile.badges.admin
         ) {
+          this.loggedIn = true;
           this.hasAccess = true;
         }
       });
@@ -73,7 +75,6 @@ export default {
       await axios
         .get(`http://localhost:3000/api/v1/users/${this.$route.params.action}`)
         .then((req) => {
-          this.loggedIn = true;
           this.user = req.data.user;
           this.banner = req.data.user.profile.banner;
           this.description = req.data.user.profile.description;
