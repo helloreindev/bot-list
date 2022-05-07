@@ -27,7 +27,7 @@ export default {
     this.$nextTick(async () => {
       await this.fetchUser();
     });
-    
+
     setTimeout(() => (this.loading = false), 200);
   },
   methods: {
