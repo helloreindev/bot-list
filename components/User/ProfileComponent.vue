@@ -635,7 +635,7 @@ div.hero-bg {
   position: absolute;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.6s;
+  transition: 0.2s;
 }
 
 .tooltip-date .tooltiptext-date::after {
@@ -674,7 +674,7 @@ div.hero-bg {
   position: absolute;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.6s;
+  transition: 0.3s ease;
 }
 
 .tooltip .tooltiptext::after {
@@ -714,7 +714,7 @@ div.hero-bg {
   position: absolute;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.6s;
+  transition: 0.3s;
 }
 
 .tooltip-expand .tooltiptext-expand::after {
