@@ -2,6 +2,8 @@
 
 import { Connection, Model, Schema } from "mongoose";
 
+type BotStatus = "approved" | "queue" | "denied";
+
 export interface UserBadges {
   admin: boolean;
   approval: boolean;
@@ -17,8 +19,8 @@ export interface UserBadges {
 
 export interface UserBots {
   addedAt?: Date;
-  approved?: boolean;
   id?: string;
+  status: BotStatus;
 }
 
 export interface UserProfile {
