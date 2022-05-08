@@ -235,7 +235,7 @@
             v-if="joinedAt.date && joinedAt.short && joinedAt.time"
             class="tooltip-date highlight"
           >
-            Joined <b>{{ joinedAt.short }}</b>
+            Joined <b>{{ user.badges.lead ? "Early in the Days" : joinedAt.short }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
               ><b>{{ joinedAt.date }}</b>
               <small style="font-size: 12px; color: blueviolet">{{
@@ -481,7 +481,7 @@
             >
           </div>
         </div>
-        <h3>{{ user.username }}'s Public Bots [{{ user.bots.length }}]</h3>
+        <h3>Public Bots [{{ user.bots.filter((bot) => bot.status === "approved").length || "0" }}]</h3>
         <div class="unselectable" style="margin-top: 4%"></div>
         <button v-if="hasAccess" @click="redirectEdit">
           <span class="text">Edit Profile</span>
