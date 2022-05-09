@@ -6,25 +6,93 @@
       below to authorise yourself.
     </h3>
     <center>
-      <button @click="redirectLogin"><span class="text">Login</span></button>
+      <button class="small button" @click="redirectLogin">Login</button>
     </center>
   </div>
-  <div v-else-if="hasAccess">
+  <div class="section" id="edit" v-else-if="hasAccess">
     <h2>{{ user.username }}#{{ user.discriminator }}</h2>
-    <form @submit.prevent="updateProfile">
-      <div>
-        <input v-model="description" type="text" placeholder="Description" />
+    <form class="center" @submit.prevent="updateProfile">
+      <div class="input-holder">
+        <input
+          class="input"
+          v-model="description"
+          type="text"
+          placeholder="Description"
+        />
       </div>
-      <div>
-        <input v-model="banner" type="text" placeholder="Banner URL" />
+      <br />
+      <div class="input-holder">
+        <input
+          class="input"
+          v-model="banner"
+          type="text"
+          placeholder="Banner URL"
+        />
+      </div>
+      <br />
+      <div
+        v-if="badges.lead || badges.admin"
+        style="
+          display: inline-block;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <h2>Badges</h2>
+        <label class="container"
+          >Administrator
+          <input type="checkbox" v-model="badges.admin" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Moderator
+          <input type="checkbox" v-model="badges.mod" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Bot Reviewer Team
+          <input type="checkbox" v-model="badges.approvalLvl2" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Bot Reviewer
+          <input type="checkbox" v-model="badges.approval" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Verified
+          <input type="checkbox" v-model="badges.verified" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Contributor
+          <input type="checkbox" v-model="badges.contributor" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Bug Hunter Expert
+          <input type="checkbox" v-model="badges.hunterLvl2" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Bug Hunter
+          <input type="checkbox" v-model="badges.hunter" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Supporter
+          <input type="checkbox" v-model="badges.supporter" />
+          <span class="checkmark"></span>
+        </label>
       </div>
       <center>
-        <button style="margin-top: 5%"><span class="text">Update</span></button>
+        <button class="button" style="margin-top: 5%">Update</button>
       </center>
     </form>
     <center>
-      <button style="margin-top: 1%" @click="redirectBack">
-        <span class="text">Back</span>
+      <button class="button" style="margin-top: 1%" @click="redirectBack">
+        Back
       </button>
     </center>
   </div>
@@ -42,6 +110,7 @@ export default {
   name: "ProfileEditComponent",
   data() {
     return {
+      badges: {},
       banner: "",
       description: "",
       hasAccess: false,
@@ -78,6 +147,7 @@ export default {
           this.user = req.data.user;
           this.banner = req.data.user.profile.banner;
           this.description = req.data.user.profile.description;
+          this.badges = req.data.user.badges;
           setTimeout(() => (this.loading = false), 200);
         });
     },
@@ -95,6 +165,7 @@ export default {
             .patch(
               `http://localhost:3000/api/v1/users/${this.$route.params.action}`,
               {
+                badges: this.badges,
                 banner: this.banner,
                 description: this.description,
               },
@@ -126,6 +197,7 @@ export default {
           .patch(
             `http://localhost:3000/api/v1/users/${this.$route.params.action}`,
             {
+              badges: this.badges,
               banner: this.banner,
               description: this.description,
             },
