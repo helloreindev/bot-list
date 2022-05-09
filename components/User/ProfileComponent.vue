@@ -489,11 +489,16 @@
           }}]
         </h3>
         <div class="unselectable" style="margin-top: 4%"></div>
-        <button v-if="hasAccess" @click="redirectEdit">
-          <span class="text">Edit Profile</span>
+        <button class="button" v-if="hasAccess" @click="redirectEdit">
+          Edit Profile
         </button>
-        <button v-if="hasAccess" style="margin-top: 5%" @click="redirectLogout">
-          <span class="text">Logout</span>
+        <button
+          class="button"
+          v-if="hasAccess && isOwner"
+          style="margin-top: 5%"
+          @click="redirectLogout"
+        >
+          Logout
         </button>
       </div>
     </center>
@@ -511,6 +516,7 @@ export default {
       avatarURL: "",
       bannerURL: "",
       hasAccess: false,
+      isOwner: false,
       joinedAt: {
         date: "",
         short: "",
@@ -530,6 +536,11 @@ export default {
     async checkUserOwner() {
       await axios.get("http://localhost:3000/api/v1/users/@me").then((req) => {
         if (req.data.user.id === this.user.id) {
+          this.hasAccess = true;
+          this.isOwner = true;
+        }
+
+        if (req.data.profile.badges.lead || req.data.profile.badges.admin) {
           this.hasAccess = true;
         }
       });
@@ -600,18 +611,5 @@ div.hero-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     var(--banner) no-repeat;
   background-size: 100%;
-}
-
-.highlight {
-  text-shadow: 2px 2px 4px #050500;
-}
-
-.badge {
-  display: inline-block;
-  padding: 7px;
-}
-
-.badge:hover {
-  cursor: pointer;
 }
 </style>
