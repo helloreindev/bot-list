@@ -9,13 +9,13 @@
       <button class="small button" @click="redirectLogin">Login</button>
     </center>
   </div>
-  <div class="section" id="edit" v-else-if="hasAccess">
+  <div v-else-if="hasAccess" id="edit" class="section">
     <h2>{{ user.username }}#{{ user.discriminator }}</h2>
     <form class="center" @submit.prevent="updateProfile">
       <div class="input-holder">
         <input
-          class="input"
           v-model="description"
+          class="input"
           type="text"
           placeholder="Description"
         />
@@ -23,8 +23,8 @@
       <br />
       <div class="input-holder">
         <input
-          class="input"
           v-model="banner"
+          class="input"
           type="text"
           placeholder="Banner URL"
         />
@@ -42,47 +42,47 @@
         <h2>Badges</h2>
         <label class="container"
           >Administrator
-          <input type="checkbox" v-model="badges.admin" />
+          <input v-model="badges.admin" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Moderator
-          <input type="checkbox" v-model="badges.mod" />
+          <input v-model="badges.mod" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Bot Reviewer Team
-          <input type="checkbox" v-model="badges.approvalLvl2" />
+          <input v-model="badges.approvalLvl2" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Bot Reviewer
-          <input type="checkbox" v-model="badges.approval" />
+          <input v-model="badges.approval" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Verified
-          <input type="checkbox" v-model="badges.verified" />
+          <input v-model="badges.verified" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Contributor
-          <input type="checkbox" v-model="badges.contributor" />
+          <input v-model="badges.contributor" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Bug Hunter Expert
-          <input type="checkbox" v-model="badges.hunterLvl2" />
+          <input v-model="badges.hunterLvl2" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Bug Hunter
-          <input type="checkbox" v-model="badges.hunter" />
+          <input v-model="badges.hunter" type="checkbox" />
           <span class="checkmark"></span>
         </label>
         <label class="container"
           >Supporter
-          <input type="checkbox" v-model="badges.supporter" />
+          <input v-model="badges.supporter" type="checkbox" />
           <span class="checkmark"></span>
         </label>
       </div>
