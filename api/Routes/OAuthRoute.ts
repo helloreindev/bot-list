@@ -1,6 +1,6 @@
-import { Endpoints } from "../Managers/Endpoints";
 import Passport from "passport";
 import { Router } from "express";
+import { Endpoints } from "../Managers/Endpoints";
 import {
   getCallback,
   getLogin,

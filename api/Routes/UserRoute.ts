@@ -1,5 +1,5 @@
-import { Endpoints } from "../Managers/Endpoints";
 import { Router } from "express";
+import { Endpoints } from "../Managers/Endpoints";
 import {
   getUserID,
   getUserMe,
