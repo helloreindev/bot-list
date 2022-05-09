@@ -1,3 +1,4 @@
+import { Endpoints } from "../Managers/Endpoints";
 import Passport from "passport";
 import { Router } from "express";
 import {
@@ -8,14 +9,14 @@ import {
 
 export default function routeOAuth(router: Router, passport: typeof Passport) {
   router.get(
-    "/callback",
+    Endpoints.Callback,
     passport.authenticate("discord", { failureRedirect: "/" }),
     getCallback
   );
   router.get(
-    "/login",
+    Endpoints.Login,
     getLogin,
     passport.authenticate("discord", { prompt: "consent" })
   );
-  router.get("/logout", getLogout);
+  router.get(Endpoints.Logout, getLogout);
 }

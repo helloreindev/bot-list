@@ -1,3 +1,4 @@
+import { Endpoints } from "../Managers/Endpoints";
 import { Router } from "express";
 import {
   getUserID,
@@ -6,7 +7,7 @@ import {
 } from "../Controllers/UserController";
 
 export default function routeAPIUsers(router: Router) {
-  router.get("/api/v1/users/@me", getUserMe);
-  router.get("/api/v1/users/:userID", getUserID);
-  router.patch("/api/v1/users/:userID", patchUserProfile);
+  router.get(Endpoints.User("@me"), getUserMe);
+  router.get(Endpoints.User(":userID"), getUserID);
+  router.patch(Endpoints.User(":userID"), patchUserProfile);
 }
