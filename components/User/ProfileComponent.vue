@@ -473,7 +473,8 @@
             v-if="joinedAt.date && joinedAt.short && joinedAt.time"
             class="tooltip-date highlight"
           >
-            Joined <b>{{ joinedAt.short }}</b>
+            Joined
+            <b>{{ user.badges.lead ? "Early in the Days" : joinedAt.short }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
               ><b>{{ joinedAt.date }}</b>
               <small style="font-size: 12px; color: blueviolet">{{
@@ -612,124 +613,5 @@ div.hero-bg {
 
 .badge:hover {
   cursor: pointer;
-}
-
-.tooltip-date {
-  position: relative;
-  display: inline-block;
-  margin-top: 3%;
-  transition-duration: 0.3s;
-}
-
-.tooltip-date .tooltiptext-date {
-  visibility: hidden;
-  width: 240px;
-  bottom: 180%;
-  left: 50%;
-  margin-left: -120px;
-  background-color: rgb(10, 10, 10);
-  color: rgb(223, 223, 223);
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  position: absolute;
-  z-index: 1;
-  opacity: 0;
-  transition: 0.2s;
-}
-
-.tooltip-date .tooltiptext-date::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -7px;
-  border-width: 7px;
-  border-style: solid;
-  border-color: rgb(10, 10, 10) transparent transparent transparent;
-}
-
-.tooltip-date:hover .tooltiptext-date {
-  opacity: 1;
-  visibility: visible;
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-  margin-top: 3%;
-  transition-duration: 0.3s;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  bottom: 120%;
-  left: 50%;
-  margin-left: -60px;
-  background-color: rgb(10, 10, 10);
-  color: rgb(223, 223, 223);
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  position: absolute;
-  z-index: 1;
-  opacity: 0;
-  transition: 0.3s ease;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -7px;
-  border-width: 7px;
-  border-style: solid;
-  border-color: rgb(10, 10, 10) transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  opacity: 1;
-  visibility: visible;
-}
-
-.tooltip-expand {
-  position: relative;
-  display: inline-block;
-  margin-top: 3%;
-  transition-duration: 0.3s;
-}
-
-.tooltip-expand .tooltiptext-expand {
-  visibility: hidden;
-  width: 180px;
-  bottom: 120%;
-  left: 50%;
-  margin-left: -90px;
-  background-color: rgb(10, 10, 10);
-  color: rgb(223, 223, 223);
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  position: absolute;
-  z-index: 1;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.tooltip-expand .tooltiptext-expand::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -7px;
-  border-width: 7px;
-  border-style: solid;
-  border-color: rgb(10, 10, 10) transparent transparent transparent;
-}
-
-.tooltip-expand:hover .tooltiptext-expand {
-  opacity: 1;
-  visibility: visible;
 }
 </style>
