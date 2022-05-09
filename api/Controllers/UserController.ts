@@ -111,6 +111,7 @@ export async function patchUserProfile(req: Request, res: Response) {
     { id: req.params.userID as string },
     {
       $set: {
+        badges: req.body.badges,
         profile: { banner: req.body.banner, description: req.body.description },
       },
     }
