@@ -3,11 +3,11 @@
     <div v-if="loading"></div>
     <div v-else-if="!loggedIn">
       <h1>Hello World!</h1>
-      <button @click="redirectLogin"><span class="text">Login</span></button>
+      <button class="button" @click="redirectLogin">Login</button>
     </div>
     <div v-else>
       <h1>Hello World! {{ user.username }}#{{ user.discriminator }}</h1>
-      <button @click="redirectMe"><span class="text">Profile</span></button>
+      <button class="button" @click="redirectMe">Profile</button>
     </div>
   </center>
 </template>
