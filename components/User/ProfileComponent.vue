@@ -489,12 +489,12 @@
           }}]
         </h3>
         <div class="unselectable" style="margin-top: 4%"></div>
-        <button class="button" v-if="hasAccess" @click="redirectEdit">
+        <button v-if="hasAccess" class="button" @click="redirectEdit">
           Edit Profile
         </button>
         <button
-          class="button"
           v-if="hasAccess && isOwner"
+          class="button"
           style="margin-top: 5%"
           @click="redirectLogout"
         >
