@@ -38,6 +38,7 @@ export interface User {
   id: string;
   joinedAt: Date;
   profile: UserProfile;
+  voteReset?: Date;
 }
 
 const UserSchema = new Schema<User>({
@@ -120,6 +121,9 @@ const UserSchema = new Schema<User>({
       required: false,
       type: String,
     },
+  },
+  voteReset: {
+    type: Date,
   },
 });
 
