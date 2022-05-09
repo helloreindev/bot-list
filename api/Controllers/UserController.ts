@@ -101,7 +101,7 @@ export async function patchUserProfile(req: Request, res: Response) {
   }
 
   if (!req.isAuthenticated()) {
-    return res.status(403);
+    return res.status(401);
   }
 
   const model = createUserModel(connection);
