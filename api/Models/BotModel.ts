@@ -38,7 +38,6 @@ export interface Bot {
   state: BotState;
   stats?: BotStats;
   tags: BotTags[];
-  username: string;
   verified?: boolean;
   vote: number;
 }
@@ -102,10 +101,6 @@ const BotSchema = new Schema<Bot>({
     default: [],
     required: true,
     type: [String],
-  },
-  username: {
-    required: true,
-    type: String,
   },
   verified: {
     default: false,
