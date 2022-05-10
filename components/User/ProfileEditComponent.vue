@@ -23,8 +23,9 @@
           v-model="description"
           class="input"
           type="text"
-          placeholder="Description"
+          placeholder=" "
         />
+        <div class="placeholder">Description</div>
       </div>
       <br />
       <div class="input-holder">
@@ -32,8 +33,9 @@
           v-model="banner"
           class="input"
           type="text"
-          placeholder="Banner URL"
+          placeholder=" "
         />
+        <div class="placeholder">Banner</div>
       </div>
       <br />
       <div
