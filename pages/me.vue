@@ -6,7 +6,7 @@
         It seems you're not authorised yet. Please click the <b>Login</b> button
         below to authorise yourself.
       </h3>
-      <button @click="redirectLogin"><span class="text">Login</span></button>
+      <button class="button" @click="redirectLogin">Login</button>
     </div>
   </center>
 </template>
