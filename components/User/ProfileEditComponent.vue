@@ -29,12 +29,7 @@
       </div>
       <br />
       <div class="input-holder">
-        <input
-          v-model="banner"
-          class="input"
-          type="text"
-          placeholder=" "
-        />
+        <input v-model="banner" class="input" type="text" placeholder=" " />
         <div class="placeholder">Banner</div>
       </div>
       <br />
