@@ -10,6 +10,12 @@
     </center>
   </div>
   <div v-else-if="hasAccess" id="edit" class="section">
+    <img
+      class="avatar unselectable"
+      draggable="false"
+      :src="avatarURL"
+      alt="User Profile"
+    />
     <h2>{{ user.username }}#{{ user.discriminator }}</h2>
     <form class="center" @submit.prevent="updateProfile">
       <div class="input-holder">
@@ -31,7 +37,7 @@
       </div>
       <br />
       <div
-        v-if="badges.lead || badges.admin"
+        v-if="selfUser.profile.badges.lead || selfUser.profile.badges.admin"
         style="
           display: inline-block;
           flex-flow: row wrap;
@@ -110,12 +116,14 @@ export default {
   name: "ProfileEditComponent",
   data() {
     return {
+      avatarURL: "",
       badges: {},
       banner: "",
       description: "",
       hasAccess: false,
       loading: true,
       loggedIn: false,
+      selfUser: {},
       user: {},
     };
   },
@@ -128,6 +136,8 @@ export default {
   methods: {
     async checkUserOwner() {
       await axios.get("http://localhost:3000/api/v1/users/@me").then((req) => {
+        this.selfUser = req.data;
+
         if (req.data.user.id === this.user.id) {
           this.loggedIn = true;
           this.hasAccess = true;
@@ -144,6 +154,7 @@ export default {
       await axios
         .get(`http://localhost:3000/api/v1/users/${this.$route.params.action}`)
         .then((req) => {
+          this.avatarURL = `https://cdn.discordapp.com/avatars/${req.data.user.id}/${req.data.user.avatar}.png`;
           this.user = req.data.user;
           this.banner = req.data.user.profile.banner;
           this.description = req.data.user.profile.description;
