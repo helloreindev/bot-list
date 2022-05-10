@@ -28,7 +28,7 @@ export default {
       await this.fetchUser();
     });
 
-    setTimeout(() => (this.loading = false), 200);
+    setTimeout(() => (this.loading = false), 400);
   },
   methods: {
     async fetchUser() {
