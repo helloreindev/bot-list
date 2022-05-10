@@ -29,7 +29,7 @@ export default {
       await this.fetchLogin();
     });
 
-    setTimeout(() => (this.loading = false), 200);
+    setTimeout(() => (this.loading = false), 400);
   },
   methods: {
     fetchLogin() {

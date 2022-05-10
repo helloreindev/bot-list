@@ -21,7 +21,7 @@
       <div class="input-holder">
         <input
           v-model="description"
-          class="input"
+          class="input unselectable"
           type="text"
           placeholder=" "
         />
@@ -29,7 +29,7 @@
       </div>
       <br />
       <div class="input-holder">
-        <input v-model="banner" class="input" type="text" placeholder=" " />
+        <input v-model="banner" class="input unselectable" type="text" placeholder=" " />
         <div class="placeholder">Banner</div>
       </div>
       <br />
@@ -156,7 +156,7 @@ export default {
           this.banner = req.data.user.profile.banner;
           this.description = req.data.user.profile.description;
           this.badges = req.data.user.badges;
-          setTimeout(() => (this.loading = false), 200);
+          setTimeout(() => (this.loading = false), 400);
         });
     },
     async updateProfile() {
