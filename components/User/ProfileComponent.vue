@@ -76,7 +76,7 @@
           <div v-if="user.badges.hunterLvl2" class="tooltip-expand">
             <i
               style="font-size: 40px; color: #ffd56c"
-              class="badge fal fa-bug"
+              class="badge fal fa-bug-slash"
             ></i>
             <span class="unselectable highlight tooltiptext-expand"
               >Bug Hunter Expert</span
