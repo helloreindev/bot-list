@@ -1,6 +1,7 @@
 import { Connection, Model, Schema } from "mongoose";
 
-export type BotState = "approved" | "queue" | "denied";
+export type BotReviewCount = 0 | 1 | 2 | 3;
+export type BotState = "abandoned" | "approved" | "denied" | "queued";
 export type BotTags = "Moderation" | "Utility";
 
 export interface BotOwner {
@@ -26,6 +27,7 @@ export interface Bot {
   authToken?: string;
   avatar: string;
   description: string;
+  featured?: boolean;
   id: string;
   invite?: string;
   nsfw?: boolean;
@@ -34,6 +36,7 @@ export interface Bot {
   preview: string;
   promoted?: boolean;
   queueNote?: string;
+  reviewCount: BotReviewCount;
   social?: BotSocial;
   state: BotState;
   stats?: BotStats;
@@ -57,6 +60,10 @@ const BotSchema = new Schema<Bot>({
   description: {
     required: true,
     type: String,
+  },
+  featured: {
+    default: false,
+    type: Boolean,
   },
   id: {
     required: true,
@@ -86,6 +93,11 @@ const BotSchema = new Schema<Bot>({
   },
   queueNote: {
     type: String,
+  },
+  reviewCount: {
+    default: 0,
+    required: true,
+    type: Number,
   },
   social: {
     type: Object,
