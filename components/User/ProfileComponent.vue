@@ -25,7 +25,11 @@
               style="font-size: 40px; color: #1ec9eb"
               class="badge fa-3x fal fa-crown"
             ></i>
-            <span class="unselectable highlight tooltiptext">Project Lead</span>
+            <span
+              style="color: #1ec9eb"
+              class="unselectable highlight tooltiptext"
+              >Project Lead</span
+            >
           </div>
           <div v-if="user.badges.admin" class="tooltip">
             <i
@@ -263,7 +267,11 @@
               style="font-size: 40px; color: #1ec9eb"
               class="badge fa-3x fal fa-crown"
             ></i>
-            <span class="unselectable highlight tooltiptext">Project Lead</span>
+            <span
+              style="color: #1ec9eb"
+              class="unselectable highlight tooltiptext"
+              >Project Lead</span
+            >
           </div>
           <div v-if="user.badges.admin" class="tooltip">
             <i
@@ -572,9 +580,9 @@ export default {
 
 <style scoped>
 #bgslide {
-  flex-grow: 1;
-  flex-shrink: 0;
-  padding: 3rem 1.5rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
   outline: none !important;
 }
 
