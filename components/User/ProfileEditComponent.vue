@@ -1,112 +1,114 @@
 <template>
-  <div v-if="loading"></div>
-  <div v-else-if="!loggedIn">
-    <h3 style="margin-top: 10%">
-      It seems you're not authorised yet. Please click the <b>Login</b> button
-      below to authorise yourself.
-    </h3>
+  <div>
     <center>
-      <button class="small button" @click="redirectLogin">Login</button>
-    </center>
-  </div>
-  <div v-else-if="hasAccess" id="edit" class="section">
-    <img
-      class="avatar unselectable"
-      draggable="false"
-      :src="avatarURL"
-      alt="User Profile"
-    />
-    <h2>{{ user.username }}#{{ user.discriminator }}</h2>
-    <form class="center" @submit.prevent="updateProfile">
-      <div class="input-holder">
-        <input
-          v-model="description"
-          class="input unselectable"
-          type="text"
-          placeholder=" "
+      <div v-if="loading" class="loader"></div>
+      <div v-else-if="!loggedIn">
+        <h3 style="margin-top: 10%">
+          It seems you're not authorised yet. Please click the
+          <b>Login</b> button below to authorise yourself.
+        </h3>
+        <button class="small button" @click="redirectLogin">Login</button>
+      </div>
+      <div v-else-if="hasAccess" id="edit" class="section">
+        <img
+          class="avatar unselectable"
+          draggable="false"
+          :src="avatarURL"
+          alt="User Profile"
         />
-        <div class="placeholder">Description</div>
+        <h2>{{ user.username }}#{{ user.discriminator }}</h2>
+        <form class="center" @submit.prevent="updateProfile">
+          <div class="input-holder">
+            <input
+              v-model="description"
+              class="input unselectable"
+              type="text"
+              placeholder=" "
+            />
+            <div class="placeholder">Description</div>
+          </div>
+          <br />
+          <div class="input-holder">
+            <input
+              v-model="banner"
+              class="input unselectable"
+              type="text"
+              placeholder=" "
+            />
+            <div class="placeholder">Banner</div>
+          </div>
+          <br />
+          <div
+            v-if="selfUser.profile.badges.lead || selfUser.profile.badges.admin"
+            style="
+              display: inline-block;
+              flex-flow: row wrap;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <h2>Badges</h2>
+            <label class="container"
+              >Administrator
+              <input v-model="badges.admin" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Moderator
+              <input v-model="badges.mod" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Bot Reviewer Team
+              <input v-model="badges.approvalLvl2" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Bot Reviewer
+              <input v-model="badges.approval" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Verified
+              <input v-model="badges.verified" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Contributor
+              <input v-model="badges.contributor" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Bug Hunter Expert
+              <input v-model="badges.hunterLvl2" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Bug Hunter
+              <input v-model="badges.hunter" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >Supporter
+              <input v-model="badges.supporter" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <center>
+            <button class="button" style="margin-top: 5%">Update</button>
+          </center>
+        </form>
+        <center>
+          <button class="button" style="margin-top: 1%" @click="redirectBack">
+            Back
+          </button>
+        </center>
       </div>
-      <br />
-      <div class="input-holder">
-        <input
-          v-model="banner"
-          class="input unselectable"
-          type="text"
-          placeholder=" "
-        />
-        <div class="placeholder">Banner</div>
+      <div v-else-if="loggedIn && !hasAccess">
+        <h1>Error - 403</h1>
+        <h2>Unauthorised</h2>
       </div>
-      <br />
-      <div
-        v-if="selfUser.profile.badges.lead || selfUser.profile.badges.admin"
-        style="
-          display: inline-block;
-          flex-flow: row wrap;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        <h2>Badges</h2>
-        <label class="container"
-          >Administrator
-          <input v-model="badges.admin" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Moderator
-          <input v-model="badges.mod" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Bot Reviewer Team
-          <input v-model="badges.approvalLvl2" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Bot Reviewer
-          <input v-model="badges.approval" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Verified
-          <input v-model="badges.verified" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Contributor
-          <input v-model="badges.contributor" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Bug Hunter Expert
-          <input v-model="badges.hunterLvl2" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Bug Hunter
-          <input v-model="badges.hunter" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container"
-          >Supporter
-          <input v-model="badges.supporter" type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <center>
-        <button class="button" style="margin-top: 5%">Update</button>
-      </center>
-    </form>
-    <center>
-      <button class="button" style="margin-top: 1%" @click="redirectBack">
-        Back
-      </button>
     </center>
-  </div>
-  <div v-else-if="loggedIn && !hasAccess">
-    <h1>Error - 403</h1>
-    <h2>Unauthorised</h2>
   </div>
 </template>
 
