@@ -275,7 +275,7 @@ h3 {
 }
 
 .small-link {
-  padding: 5px 5px;
+  padding: 5px;
   margin: 0 5px;
 }
 
@@ -527,7 +527,7 @@ code {
   outline: none;
   background-color: rgba(0, 0, 0, 0);
   color: var(--color);
-  box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0) inset;
   transition: all 600ms ease;
 }
 
@@ -625,7 +625,7 @@ hr {
 
 .half {
   width: calc(40% - 30px);
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .half-left {
@@ -795,7 +795,7 @@ a {
 
 .tags {
   list-style: none;
-  margin: 20px 0 0 0;
+  margin: 20px 0 0;
   overflow: hidden;
   padding: 0;
 }
@@ -876,7 +876,7 @@ a {
   border-radius: 6px;
   font-weight: normal;
   font-family: "Hind", Arial, sans-serif;
-  padding: 7px 0 5px 0;
+  padding: 7px 0 5px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: -175%;
@@ -1028,7 +1028,7 @@ a {
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.65));
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.65));
   animation: pulsePic 2s infinite;
   -webkit-animation: pulsePic 2s infinite;
 }
