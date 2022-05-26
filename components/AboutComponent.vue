@@ -1,18 +1,13 @@
 <template>
   <div>
-    <h2><strike>About This Website</strike></h2>
-    <!-- <p style="display: inline">
+    <h2>About This Website</h2>
+    <p style="display: inline">
       This is a website list for Discord bots and everything else. It's
       originally recovered from an old version of the website called
-      <b>ClientCord</b> but unfortunately, <br> we have to stopped the service and
-      start rewriting the entire thing to make a better and comfortable
-      environment for everyone! <br> This website is run by
-    </p> -->
-    <p style="display: inline">
-      This is a place where you die from every possible diseases (for legal
-      reason this is a joke) but that's not it. <b>Hellorein</b> is a place to
-      steal bots bots bots bots bots <br />
-      bots bots bots bots bots and more bots. This website is run by
+      <b>ClientCord</b> but unfortunately, <br />
+      we have to stopped the service and start rewriting the entire thing to
+      make a better and comfortable environment for everyone! <br />
+      This website is run by
     </p>
     <div style="display: inline" class="link-card">
       <nuxt-link to="/user/516186529547288576">Reinhardt</nuxt-link>.
@@ -182,7 +177,6 @@ span.banner-bg {
   animation: spin 2s linear infinite;
 }
 
-/* Safari */
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
