@@ -241,7 +241,7 @@ export default {
       });
     },
     redirectBack() {
-      this.$router.go(-1);
+      this.$router.push(`/user/${this.user.id}`);
     },
     redirectLogin() {
       location.href = "/login";
