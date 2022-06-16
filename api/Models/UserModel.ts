@@ -6,6 +6,7 @@ type BotStatus = "approved" | "queue" | "denied";
 
 export interface UserBadges {
   admin: boolean;
+  alumni: boolean;
   approval: boolean;
   approvalLvl2: boolean;
   contributor: boolean;
@@ -44,6 +45,10 @@ export interface User {
 const UserSchema = new Schema<User>({
   badges: {
     admin: {
+      required: true,
+      type: Boolean,
+    },
+    alumni: {
       required: true,
       type: Boolean,
     },

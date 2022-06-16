@@ -66,6 +66,7 @@ export async function getUserMe(req: Request, res: Response) {
     createUserMongooseModel(connection, {
       badges: {
         admin: false,
+        alumni: false,
         approval: false,
         approvalLvl2: false,
         contributor: false,
