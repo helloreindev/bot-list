@@ -89,6 +89,11 @@
               <span class="checkmark"></span>
             </label>
             <label class="container"
+              >Alumni
+              <input v-model="badges.alumni" type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
               >Supporter
               <input v-model="badges.supporter" type="checkbox" />
               <span class="checkmark"></span>
