@@ -23,7 +23,7 @@
         class="banner-bg link-cardtext"
         @click="redirect('/user/516186529547288576')"
       >
-        <p class="unselectable" style="font-size: 20px; margin-right: -10px">
+        <p class="unselectable" style="font-size: 20px; margin-right: -20px">
           <b>{{ username }}#{{ discriminator }}</b>
           <span v-if="badges.lead" style="color: #1ec9eb" class="badge-text"
             >Lead</span
@@ -54,7 +54,7 @@
     </div>
     <center>
       <button class="button small" style="margin-top: 5%" @click="backHome">
-        No
+        Home
       </button>
     </center>
   </div>
