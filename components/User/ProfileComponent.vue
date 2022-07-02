@@ -260,7 +260,9 @@
             class="tooltip-date highlight"
           >
             Joined
-            <b>{{ joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short }}</b>
+            <b>{{
+              joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short
+            }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
               ><b>{{ joinedAt.date }}</b>
               <small style="font-size: 12px; color: blueviolet">{{
@@ -522,7 +524,9 @@
             class="tooltip-date highlight"
           >
             Joined
-            <b>{{ joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short }}</b>
+            <b>{{
+              joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short
+            }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
               ><b>{{ joinedAt.date }}</b>
               <small style="font-size: 12px; color: blueviolet">{{
