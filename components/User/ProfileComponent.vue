@@ -260,7 +260,7 @@
             class="tooltip-date highlight"
           >
             Joined
-            <b>{{ user.badges.lead ? "Early in the Days" : joinedAt.short }}</b>
+            <b>{{ joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
               ><b>{{ joinedAt.date }}</b>
               <small style="font-size: 12px; color: blueviolet">{{
@@ -522,7 +522,7 @@
             class="tooltip-date highlight"
           >
             Joined
-            <b>{{ user.badges.lead ? "Early in the Days" : joinedAt.short }}</b>
+            <b>{{ joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
               ><b>{{ joinedAt.date }}</b>
               <small style="font-size: 12px; color: blueviolet">{{
@@ -569,6 +569,7 @@ export default {
         date: "",
         short: "",
         time: "",
+        year: null,
       },
       loading: true,
       user: {},
@@ -605,6 +606,7 @@ export default {
           this.joinedAt.time = moment(this.user.joinedAt)
             .tz("Asia/Jakarta")
             .format("HH:mm:ss [UTC]Z");
+          this.joinedAt.year = moment(this.user.joinedAt).year();
           this.loading = false;
         });
     },
