@@ -1,5 +1,9 @@
 <template>
   <div>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
+    />
     <h2>About This Website</h2>
     <p style="display: inline">
       This is a website list for Discord bots and everything else. It's
@@ -9,49 +13,7 @@
       make a better and comfortable environment for everyone! <br />
       This website is run by
     </p>
-    <div style="display: inline" class="link-card">
-      <nuxt-link to="/user/516186529547288576">Reinhardt</nuxt-link>.
-      <span v-if="loading" class="link-cardtext">
-        <center>
-          <div class="card-loader"></div>
-        </center>
-      </span>
-      <span
-        v-else-if="bannerURL"
-        id="cover"
-        :style="{ '--banner': 'url(' + bannerURL + ')' }"
-        class="banner-bg link-cardtext"
-        @click="redirect('/user/516186529547288576')"
-      >
-        <p class="unselectable" style="font-size: 20px; margin-right: -20px">
-          <b>{{ username }}#{{ discriminator }}</b>
-          <span v-if="badges.lead" style="color: #1ec9eb" class="badge-text"
-            >Lead</span
-          >
-        </p>
-        <img
-          class="unselectable link-avatar"
-          draggable="false"
-          :src="avatarURL"
-          alt="User Profile"
-        />
-      </span>
-      <span
-        v-else
-        class="link-cardtext"
-        @click="redirect('/user/516186529547288576')"
-      >
-        <p class="unselectable" style="font-size: 20px; margin-right: -10px">
-          <b>{{ username }}#{{ discriminator }}</b>
-        </p>
-        <img
-          class="unselectable link-avatar"
-          draggable="false"
-          :src="avatarURL"
-          alt="User Profile"
-        />
-      </span>
-    </div>
+    <ProfileCardComponent name="Reinhardt" :profileLink="profileLink" :username="username" :avatarURL="avatarURL" :badges="badges" :bannerURL="bannerURL" :loading="loading" :discriminator="discriminator" :description="description" />
     <center>
       <button class="button small" style="margin-top: 5%" @click="backHome">
         Home
@@ -62,16 +24,20 @@
 
 <script>
 import axios from "axios";
+import ProfileCardComponent from "./User/ProfileCardComponent.vue";
 
 export default {
   name: "AboutComponent",
+  components: { ProfileCardComponent },
   data() {
     return {
       avatarURL: "",
       badges: {},
       bannerURL: "",
+      description: "",
       discriminator: "",
       loading: true,
+      profileLink: "",
       username: "",
     };
   },
@@ -91,14 +57,13 @@ export default {
           this.avatarURL = `https://cdn.discordapp.com/avatars/${req.data.user.id}/${req.data.user.avatar}.png`;
           this.badges = req.data.user.badges;
           this.bannerURL = req.data.user.profile.banner;
+          this.description = req.data.user.profile.description;
           this.discriminator = req.data.user.discriminator;
+          this.profileLink = `/user/${req.data.user.id}`;
           this.username = req.data.user.username;
           this.loading = false;
         });
-    },
-    redirect(param) {
-      this.$router.push(param);
-    },
+    }
   },
 };
 </script>
@@ -124,8 +89,10 @@ export default {
   height: 70px;
   width: 70px;
   border-radius: 6px;
-  margin-top: -150px;
-  margin-right: 260px;
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  left: 13px;
 }
 
 .link-card {
@@ -140,8 +107,8 @@ export default {
   width: 350px;
   height: 120px;
   left: 200%;
-  margin-top: -50px;
-  margin-left: -60px;
+  margin-top: 0px;
+  margin-left: -70px;
   background-color: rgb(63, 63, 63);
   color: rgb(223, 223, 223);
   text-align: center;
@@ -175,6 +142,47 @@ span.banner-bg {
   height: 30px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
+}
+
+.tooltip-badge {
+  position: relative;
+  margin-top: 3%;
+  transition-duration: 0.2s;
+}
+
+.tooltip-badge .tooltip-badgetext {
+  visibility: hidden;
+  width: 100px;
+  height: 15px;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -50px;
+  margin-bottom: -5px;
+  background-color: rgb(10, 10, 10);
+  color: rgb(223, 223, 223);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.tooltip-badge .tooltip-badgetext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -7px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: rgb(10, 10, 10) transparent transparent transparent;
+}
+
+.tooltip-badge:hover .tooltip-badgetext {
+  opacity: 1;
+  visibility: visible;
 }
 
 @-webkit-keyframes spin {
