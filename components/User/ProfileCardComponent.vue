@@ -1,6 +1,11 @@
 <template>
   <div style="display: inline" class="link-card">
-    <nuxt-link :to="profileLink">{{ name }}</nuxt-link>.
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
+    />
+    <nuxt-link :to="profileLink">{{ name }}</nuxt-link
+    >.
     <span v-if="loading" class="link-cardtext">
       <center>
         <div class="card-loader"></div>
@@ -62,11 +67,7 @@
         alt="User Profile"
       />
     </span>
-    <span
-      v-else
-      class="link-cardtext"
-      @click="redirect(profileLink)"
-    >
+    <span v-else class="link-cardtext" @click="redirect(profileLink)">
       <p
         class="unselectable"
         style="
@@ -121,13 +122,23 @@
 
 <script>
 export default {
-  props: ["avatarURL", "bannerURL", "badges", "username", "description", "loading", "discriminator", "name", "profileLink"],
+  props: [
+    "avatarURL",
+    "bannerURL",
+    "badges",
+    "username",
+    "description",
+    "loading",
+    "discriminator",
+    "name",
+    "profileLink",
+  ],
   methods: {
     redirect(param) {
       this.$router.push(param);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
