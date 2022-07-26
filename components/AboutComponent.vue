@@ -9,7 +9,17 @@
       make a better and comfortable environment for everyone! <br />
       This website is run by
     </p>
-    <ProfileCardComponent name="Reinhardt" :profileLink="profileLink" :username="username" :avatarURL="avatarURL" :badges="badges" :bannerURL="bannerURL" :loading="loading" :discriminator="discriminator" :description="description" />
+    <ProfileCardComponent
+      name="Reinhardt"
+      :profile-link="profileLink"
+      :username="username"
+      :avatar-u-r-l="avatarURL"
+      :badges="badges"
+      :banner-u-r-l="bannerURL"
+      :loading="loading"
+      :discriminator="discriminator"
+      :description="description"
+    />
     <center>
       <button class="button small" style="margin-top: 5%" @click="backHome">
         Home
@@ -59,7 +69,7 @@ export default {
           this.username = req.data.user.username;
           this.loading = false;
         });
-    }
+    },
   },
 };
 </script>
