@@ -54,7 +54,7 @@
             class="badge fa-3x fal fa-badge-check"
           ></i
           ><span
-            style="color: #5cf27d; font-size: small"
+            style="font-size: small"
             class="unselectable highlight tooltip-badgetext"
             >Verified</span
           >
@@ -104,7 +104,7 @@
             class="badge fa-3x fal fa-badge-check"
           ></i
           ><span
-            style="color: #5cf27d; font-size: small"
+            style="font-size: small"
             class="unselectable highlight tooltip-badgetext"
             >Verified</span
           >
