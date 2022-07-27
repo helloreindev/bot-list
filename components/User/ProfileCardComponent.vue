@@ -45,18 +45,33 @@
           >
         </span>
         <span
-          v-if="badges.verified"
+          v-if="badges.admin"
           style="position: relative; left: -2px; bottom: 17px"
           class="tooltip-badge"
         >
           <i
-            style="font-size: 20px; color: #5cf27d"
-            class="badge fa-3x fal fa-badge-check"
+            style="font-size: 20px; color: #6d3eb8"
+            class="badge fa-3x fal fa-bolt"
           ></i
           ><span
             style="font-size: small"
             class="unselectable highlight tooltip-badgetext"
-            >Verified</span
+            >Administrator</span
+          >
+        </span>
+        <span
+          v-if="badges.mod"
+          style="position: relative; left: -8px; bottom: 17px"
+          class="tooltip-badge"
+        >
+          <i
+            style="font-size: 20px; color: #f52f60"
+            class="badge fa-3x fal fa-shield"
+          ></i
+          ><span
+            style="font-size: small"
+            class="unselectable highlight tooltip-badgetext"
+            >Moderator</span
           >
         </span>
       </p>
@@ -166,6 +181,9 @@ export default {
   position: absolute;
   bottom: 50px;
   left: 13px;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.65));
+  animation: pulsePic 2s infinite;
+  -webkit-animation: pulsePic 2s infinite;
 }
 
 .link-card {
