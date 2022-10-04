@@ -27,7 +27,7 @@
     "memorystore": "^1.6.7",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.37",
-    "mongoose": "^6.6.3",
+    "mongoose": "^6.6.4",
     "nuxt": "^2.15.8",
     "passport": "^0.6.0",
     "passport-discord": "^0.1.4",
