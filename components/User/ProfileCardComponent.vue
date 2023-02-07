@@ -74,6 +74,21 @@
             >Moderator</span
           >
         </span>
+        <span
+          v-if="badges.verified"
+          style="position: relative; left: -14px; bottom: 17px"
+          class="tooltip-badge"
+        >
+          <i
+            style="font-size: 20px; color: #5cf27d"
+            class="badge fa-3x fal fa-badge-check"
+          ></i
+          ><span
+            style="font-size: small"
+            class="unselectable highlight tooltip-badgetext"
+            >Verified</span
+          >
+        </span>
       </p>
       <img
         class="unselectable link-avatar"
@@ -110,8 +125,38 @@
           >
         </span>
         <span
-          v-if="badges.verified"
+          v-if="badges.admin"
           style="position: relative; left: -2px; bottom: 17px"
+          class="tooltip-badge"
+        >
+          <i
+            style="font-size: 20px; color: #6d3eb8"
+            class="badge fa-3x fal fa-bolt"
+          ></i
+          ><span
+            style="font-size: small"
+            class="unselectable highlight tooltip-badgetext"
+            >Administrator</span
+          >
+        </span>
+        <span
+          v-if="badges.mod"
+          style="position: relative; left: -8px; bottom: 17px"
+          class="tooltip-badge"
+        >
+          <i
+            style="font-size: 20px; color: #f52f60"
+            class="badge fa-3x fal fa-shield"
+          ></i
+          ><span
+            style="font-size: small"
+            class="unselectable highlight tooltip-badgetext"
+            >Moderator</span
+          >
+        </span>
+        <span
+          v-if="badges.verified"
+          style="position: relative; left: -14px; bottom: 17px"
           class="tooltip-badge"
         >
           <i
