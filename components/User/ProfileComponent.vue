@@ -261,6 +261,7 @@
           >
             Joined
             <b>{{
+              // eslint-disable-next-line
               joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short
             }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
@@ -525,6 +526,7 @@
           >
             Joined
             <b>{{
+              // eslint-disable-next-line
               joinedAt.year <= 2020 ? "Early in the Days" : joinedAt.short
             }}</b>
             <span style="font-size: 12px" class="unselectable tooltiptext-date"
