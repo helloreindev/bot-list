@@ -26,7 +26,7 @@
     "express-session": "^1.17.3",
     "memorystore": "^1.6.7",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.41",
+    "moment-timezone": "^0.5.42",
     "mongoose": "^7.0.3",
     "nuxt": "^3.3.1",
     "passport": "^0.6.0",
