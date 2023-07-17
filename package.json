@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
-    "@nuxt/types": "^2.16.0",
+    "@nuxt/types": "^2.17.1",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/dotenv": "^1.4.1",
