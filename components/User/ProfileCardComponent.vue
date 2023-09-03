@@ -28,7 +28,7 @@
           left: 95px;
         "
       >
-        <b>{{ username }}#{{ discriminator }}</b>
+        <b>{{ username }}</b>
         <span
           v-if="badges.lead"
           style="position: relative; left: 4px; bottom: 17px"
@@ -108,7 +108,7 @@
           left: 95px;
         "
       >
-        <b>{{ username }}#{{ discriminator }}</b>
+        <b>{{ username }}</b>
         <span
           v-if="badges.lead"
           style="position: relative; left: 4px; bottom: 17px"

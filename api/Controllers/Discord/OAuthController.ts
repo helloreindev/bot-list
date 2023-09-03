@@ -37,6 +37,7 @@ export function getLogin(req: Request, res: Response, next: NextFunction) {
  */
 export function getLogout(req: Request, res: Response) {
   req.session.destroy(() => {
+    /* @ts-ignore */
     req.logout();
     res.redirect("/");
   });

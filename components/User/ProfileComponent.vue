@@ -109,70 +109,70 @@
           </div>
           <h2 style="margin-top: 3%">
             <b v-if="user.badges.lead" class="highlight" style="color: #1ec9eb"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.admin"
               class="highlight"
               style="color: #6d3eb8"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.mod"
               class="highlight"
               style="color: #f52f60"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.approvalLvl2"
               class="highlight"
               style="color: #ff7519"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.approval"
               class="highlight"
               style="color: #dcff82"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.verified"
               class="highlight"
               style="color: #5cf27d"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.contributor"
               class="highlight"
               style="color: #ffff00"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.hunterLvl2"
               class="highlight"
               style="color: #ed1f29"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.hunter"
               class="highlight"
               style="color: #ffd56c"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.alumni"
               class="highlight"
               style="color: #bfbfbf"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.supporter"
               class="highlight"
               style="color: #ff73dc"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b v-else class="highlight"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
           </h2>
           <p
@@ -374,70 +374,70 @@
           </div>
           <h2 style="margin-top: 3%">
             <b v-if="user.badges.lead" class="highlight" style="color: #1ec9eb"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.admin"
               class="highlight"
               style="color: #6d3eb8"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.mod"
               class="highlight"
               style="color: #f52f60"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.approvalLvl2"
               class="highlight"
               style="color: #ff7519"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.approval"
               class="highlight"
               style="color: #dcff82"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.verified"
               class="highlight"
               style="color: #5cf27d"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.contributor"
               class="highlight"
               style="color: #ffff00"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.hunterLvl2"
               class="highlight"
               style="color: #ed1f29"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.hunter"
               class="highlight"
               style="color: #ffd56c"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.alumni"
               class="highlight"
               style="color: #bfbfbf"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b
               v-else-if="user.badges.supporter"
               class="highlight"
               style="color: #ff73dc"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
             <b v-else class="highlight"
-              >{{ user.username }}#{{ user.discriminator }}</b
+              >{{ user.username }}</b
             >
           </h2>
           <p

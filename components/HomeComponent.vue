@@ -6,7 +6,7 @@
       <button class="button" @click="redirectLogin">Login</button>
     </div>
     <div v-else>
-      <h1>Hello World! {{ user.username }}#{{ user.discriminator }}</h1>
+      <h1>Hello World! {{ user.username }}</h1>
       <button class="button" @click="redirectMe">Profile</button>
     </div>
   </center>

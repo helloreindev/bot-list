@@ -16,7 +16,7 @@
           :src="avatarURL"
           alt="User Profile"
         />
-        <h2>{{ user.username }}#{{ user.discriminator }}</h2>
+        <h2>{{ user.username }}</h2>
         <form class="center" @submit.prevent="updateProfile">
           <div class="input-holder">
             <input
